@@ -1,3 +1,5 @@
+%voltage drop depending on the change in resistance value
+
 E = [5 0 0];
 R1 = 500;
 R2 = R1;
@@ -6,7 +8,7 @@ R3 = 500000;
 R5 = linspace(499,501,21);
 U3 = linspace(0,0,21);
 
-%Petla wyznaczajaca U3 dla kolejnych R5
+%U3 for R5
 for k = 1:21
   R = [R1+R4 -R1 -R4;-R1 R1+R2+R3 -R3; -R4 -R3 R3+R4+R5(k)]
   Rinv = inv(R);
@@ -16,11 +18,10 @@ for k = 1:21
  end; 
  hold on;
  
- %Wykres
+ %plot
  scatter(R5,U3,"filled");
  plot(R5,U3);
  
- %Wartosci pradow oczkowych
  Io1 = I(1,1);
  Io2 = I(2,1);
  Io3 = I(3,1);
