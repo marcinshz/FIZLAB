@@ -1,4 +1,4 @@
-%voltage drop depending on the change in resistance value
+%voltage drop depending on the change of resistance value
 
 E = [5 0 0];
 R1 = 500;
